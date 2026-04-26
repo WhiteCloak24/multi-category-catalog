@@ -1,4 +1,4 @@
-import { Outlet, NavLink, useParams } from "react-router-dom";
+import { Outlet, NavLink, useParams, useLocation } from "react-router-dom";
 import { catalogueData } from "../utils/constants";
 import { useEffect, useRef } from "react";
 
@@ -6,13 +6,14 @@ const MainLayout = () => {
   const itemsSection = useRef();
   const categories = [...new Set(catalogueData.map((item) => item.category))];
   const { categoryName } = useParams();
-
+  const { pathname } = useLocation();
   useEffect(() => {
     itemsSection.current.scrollTo({
       top: 0,
       behavior: "smooth",
     });
   }, [categoryName]);
+  console.log(pathname);
 
   return (
     <div className="flex flex-col lg:flex-row h-screen bg-[#F8FAFC] overflow-hidden">
@@ -28,10 +29,10 @@ const MainLayout = () => {
 
         <nav className="flex lg:flex-col overflow-x-auto lg:overflow-y-auto p-3 lg:p-4 gap-1 no-scrollbar">
           <NavLink
-            to="/multi-category-catalog"
-            className={({ isActive }) =>
+            to="/multi-category-catalog/"
+            className={() =>
               `px-2 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap duration-300 ${
-                isActive
+                pathname === '/multi-category-catalog/'
                   ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30 translate-x-1"
                   : "text-slate-400 hover:text-white hover:bg-slate-800"
               }`
