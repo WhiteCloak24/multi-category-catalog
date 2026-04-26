@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* If you want to keep the Inter font and smooth scrolling from before */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+@theme {
+  /* This is where v4 handles theme customization now */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+/* Custom global overrides */
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+/* Custom Utility: Hide scrollbar */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
