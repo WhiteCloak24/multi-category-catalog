@@ -22,4 +22,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  {
+    basename: "multi-category-catalog",
+  },
 ]);
