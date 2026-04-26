@@ -22,7 +22,7 @@ const Home = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
         {displayItems.map((item) => (
           <Link
-            to={`/item/${item.itemname}`}
+            to={`/multi-category-catalog/item/${item.itemname}`}
             key={item.itemname}
             className="group relative bg-white rounded-3xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(79,70,229,0.15)] transition-all duration-500 hover:-translate-y-2 border border-slate-100"
           >

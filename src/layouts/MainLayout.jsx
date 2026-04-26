@@ -28,7 +28,7 @@ const MainLayout = () => {
 
         <nav className="flex lg:flex-col overflow-x-auto lg:overflow-y-auto p-3 lg:p-4 gap-1 no-scrollbar">
           <NavLink
-            to="/"
+            to="/multi-category-catalog"
             className={({ isActive }) =>
               `px-2 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap duration-300 ${
                 isActive
@@ -42,7 +42,7 @@ const MainLayout = () => {
           {categories.map((cat) => (
             <NavLink
               key={cat}
-              to={`/category/${cat.toLowerCase()}`}
+              to={`/multi-category-catalog/category/${cat.toLowerCase()}`}
               className={({ isActive }) =>
                 `px-2 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
                   isActive

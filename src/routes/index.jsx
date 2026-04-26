@@ -5,7 +5,7 @@ import MainLayout from "../layouts/MainLayout";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/multi-category-catalog",
     element: <MainLayout />,
     children: [
       {
